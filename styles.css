@@ -14,6 +14,7 @@
   --muted:     #777777;
   --accent:    #111111;
   --font:      'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
   --max:       1080px;
 }
 
@@ -145,9 +146,10 @@ img {
 }
 
 .hero-name {
-  font-size: clamp(3rem, 8vw, 6.5rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 9vw, 7.5rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
   line-height: 1;
   color: var(--text);
   margin-bottom: 28px;
@@ -284,11 +286,12 @@ img {
 }
 
 .project-name {
-  font-size: 1.375rem;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.2;
   color: var(--text);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 .project-year {
@@ -391,10 +394,12 @@ img {
 }
 
 .writing-group-title {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--muted);
   margin-bottom: 16px;
   padding-bottom: 10px;
@@ -424,7 +429,8 @@ img {
 }
 
 .essay-title {
-  font-size: 0.9375rem;
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--text);
   line-height: 1.3;
