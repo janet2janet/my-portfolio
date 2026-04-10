@@ -19,6 +19,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 60px;
 }
 
 body {
@@ -477,10 +478,6 @@ footer span {
 
 /* ── Responsive ───────────────────────────────────── */
 @media (max-width: 900px) {
-  #nav {
-    padding: 16px 24px;
-  }
-
   #hero {
     padding: 0 24px 60px;
   }
@@ -491,12 +488,12 @@ footer span {
 
   .about-inner {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
   }
 
   .about-photo {
     aspect-ratio: 4 / 3;
-    max-width: 360px;
+    max-width: 100%;
   }
 
   .project-body {
@@ -517,35 +514,85 @@ footer span {
 }
 
 @media (max-width: 600px) {
+  /* Nav: hide name, spread links evenly */
   #nav {
     padding: 14px 20px;
   }
 
-  .nav-links {
-    gap: 18px;
+  .nav-name {
+    display: none;
   }
 
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .nav-links a {
+    font-size: 0.6875rem;
+  }
+
+  /* Hero */
   #hero {
     padding: 0 20px 48px;
+    min-height: 100svh;
   }
 
-  .container {
-    padding: 56px 20px;
+  .hero-label {
+    font-size: 0.6875rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.9375rem;
   }
 
   .hero-links {
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: row;
+    gap: 20px;
   }
 
+  /* Container */
+  .container {
+    padding: 48px 20px;
+  }
+
+  /* About */
+  .about-photo {
+    aspect-ratio: 3 / 2;
+  }
+
+  /* Film projects — stack stills vertically on small screens */
+  .project-stills {
+    grid-template-columns: 1fr;
+  }
+
+  .project-stills img:first-child,
+  .project-stills img:nth-child(2),
+  .project-stills img:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  .project-name {
+    font-size: 1.125rem;
+  }
+
+  /* Writing */
   .essays-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Photography */
   .photo-grid {
-    columns: 1;
+    columns: 2;
+    column-gap: 4px;
   }
 
+  .photo-item {
+    margin-bottom: 4px;
+  }
+
+  /* Footer */
   .footer-inner {
     padding: 20px;
   }
