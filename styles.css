@@ -582,14 +582,24 @@ footer span {
     grid-template-columns: 1fr;
   }
 
-  /* Photography */
+  /* Photography — switch to uniform grid on mobile */
   .photo-grid {
-    columns: 2;
-    column-gap: 4px;
+    columns: unset;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
   }
 
   .photo-item {
-    margin-bottom: 4px;
+    margin-bottom: 0;
+    break-inside: unset;
+  }
+
+  .photo-item img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 
   /* Footer */
